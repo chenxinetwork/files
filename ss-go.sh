@@ -114,7 +114,11 @@ Download(){
 }
 Service(){
 	if [[ ${release} = "centos" ]]; then
+<<<<<<< HEAD
 		if ! wget --no-check-certificate "https://raw.githubusercontent.com/chenxinetwork/files/master/service/ss_go_centos" -O /etc/init.d/ss-go; then
+=======
+		if ! wget --no-check-certificate "https://gitee.com/chenxinetwork/files/raw/master/service/ss_go_centos" -O /etc/init.d/ss-go; then
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 			echo -e "${Error} Shadowsocks 服务管理脚本下载失败 !"
 			rm -rf "${FOLDER}"
 			exit 1
@@ -123,7 +127,11 @@ Service(){
 		chkconfig --add ss-go
 		chkconfig ss-go on
 	else
+<<<<<<< HEAD
 		if ! wget --no-check-certificate "https://raw.githubusercontent.com/chenxinetwork/files/master/service/ss_go_debian" -O /etc/init.d/ss-go; then
+=======
+		if ! wget --no-check-certificate "https://gitee.com/chenxinetwork/files/raw/master/service/ss_go_debian" -O /etc/init.d/ss-go; then
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 			echo -e "${Error} Shadowsocks 服务管理脚本下载失败 !"
 			rm -rf "${FOLDER}"
 			exit 1
@@ -628,13 +636,21 @@ Set_iptables(){
 	fi
 }
 Update_Shell(){
+<<<<<<< HEAD
 	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/chenxinetwork/files/master/ss-go.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+=======
+	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://gitee.com/chenxinetwork/files/raw/master/ss-go.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 无法链接到 Github !" && exit 0
 	if [[ -e "/etc/init.d/ss-go" ]]; then
 		rm -rf /etc/init.d/ss-go
 		Service
 	fi
+<<<<<<< HEAD
 	wget -N --no-check-certificate "https://raw.githubusercontent.com/chenxinetwork/files/master/ss-go.sh" && chmod +x ss-go.sh
+=======
+	wget -N --no-check-certificate "https://gitee.com/chenxinetwork/files/raw/master/ss-go.sh" && chmod +x ss-go.sh
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 	echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !(注意：因为更新方式为直接覆盖当前运行的脚本，所以可能下面会提示一些报错，无视即可)" && exit 0
 }
 check_sys

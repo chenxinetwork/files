@@ -83,14 +83,22 @@ Download_pipes(){
 }
 Service_pipes(){
 	if [[ ${release} = "centos" ]]; then
+<<<<<<< HEAD
 		if ! wget --no-check-certificate https://raw.githubusercontent.com/chenxinetwork/files/master/service/pipes_centos -O /etc/init.d/pipes; then
+=======
+		if ! wget --no-check-certificate https://gitee.com/chenxinetwork/files/raw/master/service/pipes_centos -O /etc/init.d/pipes; then
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 			echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/pipes
 		chkconfig --add pipes
 		chkconfig pipes on
 	else
+<<<<<<< HEAD
 		if ! wget --no-check-certificate https://raw.githubusercontent.com/chenxinetwork/files/master/service/pipes_debian -O /etc/init.d/pipes; then
+=======
+		if ! wget --no-check-certificate https://gitee.com/chenxinetwork/files/raw/master/service/pipes_debian -O /etc/init.d/pipes; then
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 			echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/pipes

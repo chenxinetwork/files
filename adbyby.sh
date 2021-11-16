@@ -56,18 +56,30 @@ Download_adbyby(){
 	[[ ! -e "${adbyby_file}" ]] && echo -e "${Error} ADbyby 解压失败 !" && exit 1
 	cd bin
 	chmod 777 adbyby
+<<<<<<< HEAD
 	wget -N --no-check-certificate "https://raw.githubusercontent.com/chenxinetwork/files/master/other/adhook.ini"
 }
 Service_adbyby(){
 	if [[ ${release} = "centos" ]]; then
 		if ! wget --no-check-certificate https://raw.githubusercontent.com/chenxinetwork/files/master/service/adbyby_centos -O /etc/init.d/adbyby; then
+=======
+	wget -N --no-check-certificate "https://gitee.com/chenxinetwork/files/raw/master/other/adhook.ini"
+}
+Service_adbyby(){
+	if [[ ${release} = "centos" ]]; then
+		if ! wget --no-check-certificate https://gitee.com/chenxinetwork/files/raw/master/service/adbyby_centos -O /etc/init.d/adbyby; then
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 			echo -e "${Error} ADbyby服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/adbyby
 		chkconfig --add adbyby
 		chkconfig adbyby on
 	else
+<<<<<<< HEAD
 		if ! wget --no-check-certificate https://raw.githubusercontent.com/chenxinetwork/files/master/service/adbyby_debian -O /etc/init.d/adbyby; then
+=======
+		if ! wget --no-check-certificate https://gitee.com/chenxinetwork/files/raw/master/service/adbyby_debian -O /etc/init.d/adbyby; then
+>>>>>>> bb00a41f14ec232f9fd62519187bc465f3bb5c07
 			echo -e "${Error} ADbyby服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/adbyby
